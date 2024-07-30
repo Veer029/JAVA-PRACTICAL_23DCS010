@@ -14,7 +14,6 @@ public class PRACT10
 
         String S4 = "Bhalodia Veer";
         System.out.println(new StringBuilder(S4).reverse().toString());
-
-
+        
     }
 }
