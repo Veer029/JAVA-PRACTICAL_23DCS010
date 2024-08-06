@@ -15,7 +15,31 @@ class complex{
     void sum(complex c){
         sumi=i+c.i;
         sumr=r+c.r;
-        System.out.println(sumr+"+"+sumi+"i");
+        if (sumr >= 0) {
+            System.out.println(sumr + "+" + sumi + "i"); 
+        }else {
+            System.out.println(sumr + "" + sumi + "i");
+        }}
+    void difrence(complex c) {
+        int difi = i - c.i;
+        int difr = r - c.r;
+        if (difi >= 0) {
+            System.out.println(difr + "+" + difi + "i");
+        } else {
+            System.out.println(difr + "" + difi + "i");
+
+        }
+    }
+
+    void product(complex c) {
+        // (r,i)(c.r c.i)
+        int pror = (r * c.r) - (i * c.i);
+        int proi = (r * c.i) + (i * c.r);
+        if (proi >= 0) {
+            System.out.println(pror + "+" + proi + "i"); 
+        }else {
+            System.out.println(pror + "" + proi + "i");
+        }
     }
 
 }
