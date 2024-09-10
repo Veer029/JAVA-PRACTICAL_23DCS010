@@ -9,7 +9,7 @@ class Child extends Parent{
     }
 }
 
-public class PT_17{
+public class PRACT17{
     public static void main(String[] args) {
         Parent parent = new Parent();
         parent.printparent();
