@@ -1,35 +1,30 @@
-public class PRACT26
- {
-
-    int create_exception() {
-        int x = 10 / 0;
-        return x;
+class AgeException extends Exception {
+    public AgeException(String message) {
+        super(message);
     }
+}
 
-    public void checkAge(int age) {
+public class PRACT26 {
+    
+    static void checkAge(int age) throws AgeException {
         if (age < 18) {
-            throw new ArithmeticException("Not Eligible for voting.");
+            throw new AgeException("Age is less than 18. Access denied.");
         } else {
-            System.out.println("Eligible for voting.");
+            System.out.println("Access granted.");
         }
     }
 
     public static void main(String[] args) {
-        PRACT26 obj = new PRACT26();
-        
         try {
-            obj.create_exception();
-        } catch (ArithmeticException e) {
-            System.out.println("An Error Has Occurred.");
-            e.printStackTrace();
+            checkAge(16);
+        } catch (AgeException e) {
+            System.out.println("Caught Exception: " + e.getMessage());
         }
         
-        int age = 15;
-        
         try {
-            obj.checkAge(age);
-        } catch (ArithmeticException e) {
-            System.out.println("Caught exception: " + e.getMessage());
+            checkAge(20);
+        } catch (AgeException e) {
+            System.out.println("Caught Exception: " + e.getMessage());
         }
     }
 }
